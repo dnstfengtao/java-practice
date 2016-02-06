@@ -6,6 +6,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -47,9 +48,20 @@ public class SimpleGson {
 
 
     private void deserializationCollection() {
-        final Type collectionType = new TypeToken<Collection<Integer>>() {}.getType();
+        final Type collectionType = new TypeToken<Collection<Integer>>() {
+        }.getType();
         Collection<Integer> integers = gson.fromJson("[1,2,3,4]", collectionType);
         log.info(integers);
+    }
+
+
+
+    private void deserializationCollection1() {
+        Collection<Object> collection = new ArrayList();
+        collection.add("hello");
+        collection.add(5);
+        collection.add(new Event("GREETINGS", "guest"));
+        log.info(gson.toJson(collection));
     }
 
 
@@ -59,5 +71,6 @@ public class SimpleGson {
         simpleGson.simpleToJson();
         simpleGson.deserialization();
         simpleGson.deserializationCollection();
+        simpleGson.deserializationCollection1();
     }
 }
