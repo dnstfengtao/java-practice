@@ -47,8 +47,7 @@ public class SimpleGson {
 
 
     private void deserializationCollection() {
-        final Type collectionType = new TypeToken<Collection<Integer>>() {
-        }.getType();
+        final Type collectionType = new TypeToken<Collection<Integer>>() {}.getType();
         Collection<Integer> integers = gson.fromJson("[1,2,3,4]", collectionType);
         log.info(integers);
     }

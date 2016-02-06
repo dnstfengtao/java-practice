@@ -16,7 +16,7 @@ public class ClientGetTest {
     @Test
     public void testGet() {
         CloseableHttpClient httpClient = HttpClients.createDefault();
-        HttpGet httpGet = new HttpGet("www.baidu.com");
+        HttpGet httpGet = new HttpGet("http://www.baidu.com");
         CloseableHttpResponse httpResponse = null;
         try {
             httpResponse = httpClient.execute(httpGet);
