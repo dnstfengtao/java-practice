@@ -9,8 +9,7 @@ import java.util.Date;
  */
 public class Log {
     // The class field.
-    private String   prefix;
-    private Class<?> clazz;
+    private String prefix;
 
     // The level prefix.
     private static final String DEBUG               = "debug";
@@ -26,7 +25,6 @@ public class Log {
 
 
     private Log(Class<?> clazz) {
-        this.clazz = clazz;
         prefix = clazz.getSimpleName();
     }
 
