@@ -1,5 +1,6 @@
 package org.apache.log4j;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.log4j.spi.LoggingEvent;
@@ -34,4 +35,10 @@ public class LoggingTest {
         logger.debug("debug the message.");
     }
 
+    @Test
+    public void testMDC() {
+        MDC.put("trackId", RandomStringUtils.randomAlphanumeric(20));
+        logger.debug("test track id");
+        MDC.getContext().clear();
+    }
 }
