@@ -37,7 +37,7 @@ public class LoggingTest {
 
     @Test
     public void testMDC() {
-        MDC.put("trackId", RandomStringUtils.randomAlphanumeric(20));
+        MDC.put("trackId", RandomStringUtils.randomAlphanumeric(20) + " ");
         logger.debug("test track id");
         MDC.getContext().clear();
     }
