@@ -11,9 +11,13 @@ import org.junit.Test;
  * @author fengjiantao.
  * @since 2016/11/10
  */
-public class LoggingEventTest {
+public class LoggingTest {
 
-    private static final String FQCN = Category.class.getName();
+    private static final String FQCN   = Category.class.getName();
+    /**
+     * logger.
+     */
+    private              Logger logger = Logger.getLogger(getClass());
 
     @Test
     public void testLoggingEvent() {
@@ -23,6 +27,11 @@ public class LoggingEventTest {
                 "debug the message",
                 null);
         System.out.println(ToStringBuilder.reflectionToString(loggingEvent, ToStringStyle.SHORT_PREFIX_STYLE));
+    }
+
+    @Test
+    public void testLog() {
+        logger.debug("debug the message.");
     }
 
 }
