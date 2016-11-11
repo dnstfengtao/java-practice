@@ -1,7 +1,10 @@
 package org.apache.log4j;
 
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.ThreadContext;
 import org.junit.Test;
 
 /**
@@ -16,9 +19,20 @@ public class Log4j2Test {
     public void testBasicLogging() {
         long start = System.currentTimeMillis();
         for (int i = 0; i < 1000; i++) {
-            logger.error("test track id " + i);
+            logger.debug("basic test");
         }
         System.out.println(System.currentTimeMillis() - start);
+    }
+
+    @Test
+    public void testUsingThreadContext() {
+        ThreadContext.put("trackID", RandomStringUtils.randomAlphabetic(20).concat(StringUtils.SPACE));
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++) {
+            logger.debug("test track id " + i);
+        }
+        System.out.println(System.currentTimeMillis() - start);
+        ThreadContext.clearAll();
     }
 
 }
