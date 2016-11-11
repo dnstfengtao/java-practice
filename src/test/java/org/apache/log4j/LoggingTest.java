@@ -43,4 +43,13 @@ public class LoggingTest {
         }
         MDC.getContext().clear();
     }
+
+    @Test
+    public void testTime() {
+        long start = System.currentTimeMillis();
+        for (int i = 0; i < 1000; i++) {
+            logger.debug("test track id " + i);
+        }
+        System.out.println(System.currentTimeMillis() - start);
+    }
 }
