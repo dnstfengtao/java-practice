@@ -1,11 +1,13 @@
 package com.finley.base;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import com.google.common.base.Splitter;
+import com.google.common.base.Stopwatch;
 
 /**
  * @author fengjiantao.
@@ -22,17 +24,17 @@ public class StringToolsTest {
 
     @Test
     public void performanceTest() {
-        long begin = System.currentTimeMillis();
+        Stopwatch stopWatch = Stopwatch.createStarted();
         for (int i = 0, len = 1000000; i < len; i++) {
             StringUtils.split("one,two,three,four,five,six,seven", ",");
         }
-        long end = System.currentTimeMillis();
-        System.out.println(end - begin);
-        begin = System.currentTimeMillis();
+        stopWatch.stop();
+        System.out.println(stopWatch.elapsed(TimeUnit.MILLISECONDS));
+        stopWatch.reset();
+        stopWatch.start();
         for (int i = 0, len = 1000000; i < len; i++) {
             Splitter.on(",").omitEmptyStrings().trimResults().split("one,two,three,four,five,six,seven");
         }
-        end = System.currentTimeMillis();
-        System.out.println(end - begin);
+        System.out.println(stopWatch.elapsed(TimeUnit.MILLISECONDS));
     }
 }
