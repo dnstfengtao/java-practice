@@ -77,6 +77,15 @@
             <version>${google.guava.version}</version>
         </dependency>
 
+        <!-- concurrency tools begin -->
+
+        <dependency>
+            <groupId>com.lmax</groupId>
+            <artifactId>disruptor</artifactId>
+            <version>3.3.6</version>
+        </dependency>
+
+        <!-- concurrency tools end -->
     </dependencies>
 
 </project>
