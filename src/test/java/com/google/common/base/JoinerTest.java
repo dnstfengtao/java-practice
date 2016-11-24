@@ -16,7 +16,7 @@ import com.google.common.collect.Iterables;
  */
 public class JoinerTest {
 
-    static <T> Iterable<T> iterable(final T[] arrays) {
+    <T> Iterable<T> iterable(final T[] arrays) {
         if (ArrayUtils.isEmpty(arrays)) {
             return Collections.emptyList();
         }
@@ -35,9 +35,29 @@ public class JoinerTest {
 
     @Test
     public void testConstruct() throws Exception {
+        Constructor<?> findConstructor = getJoinerConstructorSimplify();
+        Constructor<?> another = getJoinerConstructor();
+
+        findConstructor.setAccessible(true);
+        Joiner joiner = (Joiner) findConstructor.newInstance(",");
+        String result = joiner.join("a", "b", "c", "d");
+
+        Assert.assertNotNull(result);
+        Assert.assertEquals("a,b,c,d", result);
+        Assert.assertEquals(Boolean.TRUE, findConstructor.isAccessible());
+        Assert.assertEquals(Boolean.FALSE, another.isAccessible());
+    }
+
+    /**
+     * Get the Joiner default constructor, only one string param.
+     *
+     * @return joiner default constructor.
+     */
+    @SuppressWarnings("unchecked")
+    private Constructor<?> getJoinerConstructor() {
         final Constructor<?>[] constructors = Joiner.class.getDeclaredConstructors();
 
-        Constructor<?> findConstructor = Iterables.find(iterable(constructors), new Predicate<Object>() {
+        return Iterables.find(iterable(constructors), new Predicate<Object>() {
             @Override
             public boolean apply(Object input) {
                 final Constructor<Joiner> joinerConstructor = (Constructor<Joiner>) input;
@@ -53,13 +73,16 @@ public class JoinerTest {
                 return result != null;
             }
         });
+    }
 
-        findConstructor.setAccessible(true);
-        Joiner joiner = (Joiner) findConstructor.newInstance(",");
-        String result = joiner.join("a", "b", "c", "d");
-
-        Assert.assertNotNull(result);
-        Assert.assertEquals("a,b,c,d", result);
+    /**
+     * Get the Joiner default constructor, by the type string parameter.
+     *
+     * @return joiner constructor.
+     * @throws Exception reflection exception.
+     */
+    private Constructor<Joiner> getJoinerConstructorSimplify() throws Exception {
+        return Joiner.class.getDeclaredConstructor(String.class);
     }
 
 }
