@@ -9,14 +9,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-<<<<<<< f3c14a88ab40e6015407f5eccb38d67abc1db4e3
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <compiler.version>1.7</compiler.version>
         <junit.version>4.12</junit.version>
         <google.guava.version>19.0</google.guava.version>
-=======
         <spring.version>4.1.4.RELEASE</spring.version>
->>>>>>> add spring resource practice code
     </properties>
 
     <dependencies>
