@@ -28,7 +28,7 @@ public class SimpleGson {
         simpleJSON = gson.toJson("simple");
         log.info(simpleJSON);
 
-        simpleJSON = gson.toJson(new Long(1));
+        simpleJSON = gson.toJson(1L);
         log.info(simpleJSON);
 
         int[] ints = { 1 };
