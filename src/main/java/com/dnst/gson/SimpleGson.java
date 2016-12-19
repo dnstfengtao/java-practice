@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 
 /**
  * @author Finley
@@ -16,7 +17,6 @@ public class SimpleGson {
 
     private final Log  log  = LoggerFactory.getLog(SimpleGson.class);
     private final Gson gson = new Gson();
-
 
 
     private void simpleToJson() {
@@ -31,11 +31,10 @@ public class SimpleGson {
         simpleJSON = gson.toJson(1L);
         log.info(simpleJSON);
 
-        int[] ints = { 1 };
+        int[] ints = {1};
         simpleJSON = gson.toJson(ints);
         log.info(simpleJSON);
     }
-
 
 
     private void deserialization() {
@@ -46,14 +45,12 @@ public class SimpleGson {
     }
 
 
-
     private void deserializationCollection() {
         final Type collectionType = new TypeToken<Collection<Integer>>() {
         }.getType();
         Collection<Integer> integers = gson.fromJson("[1,2,3,4]", collectionType);
         log.info(integers);
     }
-
 
 
     private void deserializationCollection1() {
@@ -63,7 +60,6 @@ public class SimpleGson {
         collection.add(new Event("GREETINGS", "guest"));
         log.info(gson.toJson(collection));
     }
-
 
 
     public static void main(String[] args) {
