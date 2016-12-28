@@ -1,6 +1,6 @@
-package com.dnst.spring.beans;
+package com.finley.spring.beans;
 
-import com.dnst.spring.BasicBean;
+import com.finley.spring.BasicBean;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;

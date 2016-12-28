@@ -1,4 +1,4 @@
-package com.dnst.gson;
+package com.finley.gson;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

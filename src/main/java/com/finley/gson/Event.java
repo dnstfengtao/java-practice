@@ -1,4 +1,4 @@
-package com.dnst.gson;
+package com.finley.gson;
 
 /**
  * @author Finley

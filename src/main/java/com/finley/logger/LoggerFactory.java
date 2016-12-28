@@ -1,4 +1,4 @@
-package com.dnst.logger;
+package com.finley.logger;
 
 /**
  * @author Finley

@@ -16,7 +16,7 @@ import com.google.common.collect.Iterables;
  */
 public class JoinerTest {
 
-    <T> Iterable<T> iterable(final T[] arrays) {
+    private <T> Iterable<T> iterable(final T[] arrays) {
         if (ArrayUtils.isEmpty(arrays)) {
             return Collections.emptyList();
         }

@@ -1,14 +1,13 @@
-package com.dnst.gson;
+package com.finley.gson;
 
-import com.dnst.logger.Log;
-import com.dnst.logger.LoggerFactory;
+import com.finley.logger.Log;
+import com.finley.logger.LoggerFactory;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 /**
  * @author Finley

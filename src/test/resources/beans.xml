@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="basicBean" class="com.dnst.spring.BasicBean">
+    <bean id="basicBean" class="com.finley.spring.BasicBean">
         <property name="name" value="testBean"/>
     </bean>
 </beans>

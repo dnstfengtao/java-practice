@@ -1,6 +1,6 @@
-package com.dnst.logger;
+package com.finley.logger;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
