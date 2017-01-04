@@ -193,7 +193,7 @@ public final class PersonMessage {
     }
 
     /**
-     * Protobuf enum {@code Person.PhoneType}
+     * Protobuf enums {@code Person.PhoneType}
      */
     public enum PhoneType
         implements com.google.protobuf.ProtocolMessageEnum {
