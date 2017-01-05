@@ -2,6 +2,7 @@ package com.finley.enums;
 
 import java.util.EnumMap;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -24,4 +25,9 @@ public class BaseEnumTest {
         System.out.println(baseEnumStringEnumMap);
     }
 
+    @Test
+    public void testValueOf() {
+        final BaseEnum baseEnum = BaseEnum.valueOf("ONE");
+        Assert.assertEquals(BaseEnum.ONE, baseEnum);
+    }
 }
