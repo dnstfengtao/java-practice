@@ -21,4 +21,10 @@ public class LogBackTest {
         logger.debug("Test logback {}", "log back content.");
         MDC.clear();
     }
+
+    @Test
+    public void testError() {
+        logger.error("Error occur {} - {} ", "message", "message2", new RuntimeException("Error"));
+        logger.error("Error occur test", new RuntimeException("Error"));
+    }
 }
