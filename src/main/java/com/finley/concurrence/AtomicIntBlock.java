@@ -13,9 +13,9 @@ public class AtomicIntBlock {
         }
     }
 
-    public void increment(int incValue) {
+    public void increment() {
         synchronized (this) {
-            value = value + incValue;
+            value++;
         }
     }
 

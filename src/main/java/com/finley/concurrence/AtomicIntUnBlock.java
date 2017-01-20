@@ -26,10 +26,10 @@ public class AtomicIntUnBlock {
         return value;
     }
 
-    public void increment(int incValue) {
+    public void increment() {
         for (; ; ) {
             int current = get();
-            int newValue = current + incValue;
+            int newValue = current + 1;
             if (unsafe.compareAndSwapInt(this, valueOffset, current, newValue)) {
                 return;
             }

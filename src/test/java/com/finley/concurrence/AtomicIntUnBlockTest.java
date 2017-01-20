@@ -1,5 +1,8 @@
 package com.finley.concurrence;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 import org.junit.Test;
 
 /**
@@ -8,38 +11,21 @@ import org.junit.Test;
  */
 public class AtomicIntUnBlockTest {
     @Test
-    public void testAtomicIntUnBlock() {
-        final AtomicIntUnBlock atomicIntBlock = new AtomicIntUnBlock();
+    public void testAtomicIntUnBlock() throws InterruptedException {
+        final AtomicIntUnBlock atomicIntUnBlock = new AtomicIntUnBlock();
 
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0, len = 1000000; i < len; i++) {
-                    atomicIntBlock.increment(1);
-                }
-            }
-        }, "thread1");
-        Thread thread2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0, len = 1000000; i < len; i++) {
-                    atomicIntBlock.increment(1);
-                }
-            }
-        }, "thread2");
-        Thread thread3 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0, len = 1000000; i < len; i++) {
-                    atomicIntBlock.increment(1);
-                }
-            }
-        }, "thread3");
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
 
-        thread1.run();
-        thread2.run();
-        thread3.run();
+        for (int i = 0; i < 100000; i ++) {
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    atomicIntUnBlock.increment();
+                }
+            });
+        }
 
-        System.out.println(atomicIntBlock.get());
+        Thread.sleep(5000);
+        System.out.println(atomicIntUnBlock.get());
     }
 }
