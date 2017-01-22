@@ -8,6 +8,8 @@
     <artifactId>base-practice</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>Base :: BasePractice</name>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <compiler.version>1.7</compiler.version>
