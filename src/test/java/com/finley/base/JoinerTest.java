@@ -1,4 +1,4 @@
-package com.google.common.base;
+package com.finley.base;
 
 import java.lang.reflect.Constructor;
 import java.util.AbstractList;
@@ -8,6 +8,8 @@ import org.apache.commons.lang3.ArrayUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 
 /**
