@@ -8,7 +8,7 @@ import sun.misc.Unsafe;
  * @author fengjiantao.
  * @since 1/20/17.
  */
-public class AtomicIntUnBlock {
+public class AtomicIntUnBlock implements AtomicInt {
     private static final Unsafe unsafe = UnsafeHolder.getUnsafe();
     private static final long valueOffset;
 
@@ -31,15 +31,6 @@ public class AtomicIntUnBlock {
             int current = get();
             int newValue = current + 1;
             if (unsafe.compareAndSwapInt(this, valueOffset, current, newValue)) {
-                return;
-            }
-        }
-    }
-
-    public void set(int value) {
-        for (; ; ) {
-            int current = get();
-            if (unsafe.compareAndSwapInt(this, valueOffset, current, value)) {
                 return;
             }
         }
