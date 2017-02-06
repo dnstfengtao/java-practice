@@ -23,11 +23,9 @@ public class Log {
     private final DateFormat DATE_FORMATTER = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
 
-
     private Log(Class<?> clazz) {
         prefix = clazz.getSimpleName();
     }
-
 
 
     public static Log newInstance(Class<?> clazz) {
@@ -35,11 +33,9 @@ public class Log {
     }
 
 
-
     public void debug(final String content) {
         output(DEBUG, content);
     }
-
 
 
     public void info(final Object content) {
@@ -47,11 +43,9 @@ public class Log {
     }
 
 
-
     public void error(final String content) {
         output(ERROR, content);
     }
-
 
 
     private CallerInfo getRunnerInfo() {
@@ -67,11 +61,9 @@ public class Log {
     }
 
 
-
     public void warn(final String content) {
         output(WARN, content);
     }
-
 
 
     private void output(final String level, final Object content) {
@@ -87,11 +79,9 @@ public class Log {
     }
 
 
-
     class CallerInfo {
         private String methodName;
         private int    line;
-
 
 
         /**
@@ -102,7 +92,6 @@ public class Log {
         }
 
 
-
         /**
          * @param methodName the methodName
          */
@@ -111,14 +100,12 @@ public class Log {
         }
 
 
-
         /**
          * @return the line
          */
         public int getLine() {
             return line;
         }
-
 
 
         /**

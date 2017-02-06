@@ -1,11 +1,12 @@
 package com.finley.spring.beans;
 
-import com.finley.spring.BasicBean;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
+
+import com.finley.spring.BasicBean;
 
 /**
  * @author jiantao.feng

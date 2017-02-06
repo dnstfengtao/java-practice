@@ -1,7 +1,5 @@
 package com.finley.protobuffers;
 
-import java.util.List;
-
 import org.junit.Test;
 
 import com.google.protobuf.InvalidProtocolBufferException;

@@ -1,12 +1,12 @@
 package com.finley.http;
 
+import java.util.Arrays;
+
 import org.apache.http.Header;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.HttpVersion;
 import org.apache.http.message.BasicHttpResponse;
-
-import java.util.Arrays;
 
 /**
  * @author Finley

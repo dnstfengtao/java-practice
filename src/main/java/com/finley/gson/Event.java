@@ -8,12 +8,10 @@ public class Event {
     private String source;
 
 
-
     public Event(String name, String source) {
         this.name = name;
         this.source = source;
     }
-
 
 
     /**
@@ -24,7 +22,6 @@ public class Event {
     }
 
 
-
     /**
      * @param name the name
      */
@@ -33,14 +30,12 @@ public class Event {
     }
 
 
-
     /**
      * @return the source
      */
     public String getSource() {
         return source;
     }
-
 
 
     /**

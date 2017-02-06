@@ -16,7 +16,7 @@ public class GettingStarted {
         call.setTargetEndpointAddress(endPoint);
         call.setOperationName("WSDbfetch");
 
-        String ret = (String) call.invoke(new Object[] { "Information" });
+        String ret = (String) call.invoke(new Object[]{"Information"});
         System.out.println(ret);
     }
 
