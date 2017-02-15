@@ -1,5 +1,6 @@
 package com.finley.spring.beans;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -21,5 +22,6 @@ public class BeanFactoryTest {
 
         BasicBean basicBean = factory.getBean(BasicBean.class);
         System.out.println(basicBean.getName());
+        Assert.assertNotNull(basicBean.getName());
     }
 }
