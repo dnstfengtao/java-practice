@@ -16,6 +16,7 @@
         <junit.version>4.12</junit.version>
         <google.guava.version>19.0</google.guava.version>
         <spring.version>4.1.4.RELEASE</spring.version>
+        <yaml.version>1.17</yaml.version>
     </properties>
 
     <dependencies>
@@ -240,6 +241,14 @@
         </dependency>
 
         <!-- Net working end -->
+
+        <!-- YAML configuration begin -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${yaml.version}</version>
+        </dependency>
+        <!-- YAML configuration end -->
 
     </dependencies>
 
