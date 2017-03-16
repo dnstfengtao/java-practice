@@ -15,4 +15,9 @@ public class BankCardServiceImpl implements BankCardService {
     public void save(double amount) {
         logger.info("Execute save {} operation.", amount);
     }
+
+    @Override
+    public void withdraw(double amount) {
+        logger.info("Execute withdraw {} operation.", amount);
+    }
 }

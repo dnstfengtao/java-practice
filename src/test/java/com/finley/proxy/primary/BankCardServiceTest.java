@@ -14,6 +14,7 @@ public class BankCardServiceTest {
         BankCardService originalBankCardService = new BankCardServiceImpl();
         BankCardService proxyBankCardService = bankCardProxyFactory.getBankCardService(originalBankCardService);
         proxyBankCardService.save(1000);
+        proxyBankCardService.withdraw(1000);
     }
 
 }

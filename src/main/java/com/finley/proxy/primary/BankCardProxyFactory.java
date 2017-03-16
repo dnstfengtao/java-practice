@@ -31,11 +31,11 @@ public class BankCardProxyFactory {
 
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            logger.info("before save");
+            logger.info("before invoke");
 
             Object result = method.invoke(target, args);
 
-            logger.info("after save");
+            logger.info("after invoke");
 
             return result;
         }

@@ -8,4 +8,5 @@ public interface BankCardService {
 
     void save(double amount);
 
+    void withdraw(double amount);
 }
