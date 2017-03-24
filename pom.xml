@@ -17,6 +17,7 @@
         <google.guava.version>19.0</google.guava.version>
         <spring.version>4.1.4.RELEASE</spring.version>
         <yaml.version>1.17</yaml.version>
+        <cglib.version>3.2.5</cglib.version>
     </properties>
 
     <dependencies>
@@ -249,6 +250,14 @@
             <version>${yaml.version}</version>
         </dependency>
         <!-- YAML configuration end -->
+
+        <!-- cglib begin -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>${cglib.version}</version>
+        </dependency>
+        <!-- cglib end -->
 
     </dependencies>
 
