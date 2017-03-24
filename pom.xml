@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <compiler.version>1.7</compiler.version>
+        <compiler.version>1.8</compiler.version>
         <junit.version>4.12</junit.version>
         <google.guava.version>19.0</google.guava.version>
         <spring.version>4.1.4.RELEASE</spring.version>
