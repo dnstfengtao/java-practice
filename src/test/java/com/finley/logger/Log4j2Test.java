@@ -1,4 +1,4 @@
-package org.apache.log4j;
+package com.finley.logger;
 
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
