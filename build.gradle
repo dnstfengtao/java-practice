@@ -11,7 +11,6 @@ allprojects {
 
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'org.springframework.boot'
 
     sourceSets {
         main {
@@ -22,7 +21,7 @@ allprojects {
     }
 
     repositories {
-        mavenLocal()
+        mavencentral()
     }
 
     compileJava.options.encoding = 'UTF-8'
@@ -31,6 +30,19 @@ allprojects {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
 
+    dependencies {
+        compile "junit:junit:4.12"
+        compile "org.projectlombok:lombok:1.6.14"
+        compile "org.apache.commons:commons-lang3:3.4"
+        compile "org.slf4j:slf4j-api:1.7.7"
+        compile "ch.qos.logback:logback-core:1.1.11"
+        compile "ch.qos.logback:logback-classic:1.1.11"
+        compile "com.google.guava:guava:19.0"
+        compile "org.mybatis:mybatis:3.3.0"
+        compile "org.springframework:spring-core:4.2.3.RELEASE"
+        compile "org.springframework:spring-beans:4.2.3.RELEASE"
+        compile "org.springframework:spring-context:4.2.3.RELEASE"
+    }
 }
 
 idea {
@@ -39,17 +51,3 @@ idea {
         downloadSources = true
     }
 }
-
-// 设置子项目公共依赖.
-subprojects {
-
-    dependencies {
-        compile: "junit:junit:4.12"
-        compile: "org.projectlombok:lombok:1.6.14"
-        compile: "org.apache.commons:commons-lang3:3.4"
-        compile: "org.slf4j:slf4j-api:1.7.7"
-        compile: "junit:junit:4.12"
-        compile: "junit:junit:4.12"
-    }
-}
-
