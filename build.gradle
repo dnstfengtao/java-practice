@@ -1,0 +1,55 @@
+// Get and define the build environment.
+def env = System.getProperty("env") ?: "dev"
+ext {
+    println "Current build environment is : $env"
+}
+
+
+allprojects {
+    group = 'com.dianrong.scl'
+    version = '1.0.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+
+    sourceSets {
+        main {
+            resources {
+                srcDirs = ["src/main/resources", "src/main/resources/config/$env"]
+            }
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+
+    compileJava.options.encoding = 'UTF-8'
+    compileTestJava.options.encoding = 'UTF-8'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+}
+
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+// 设置子项目公共依赖.
+subprojects {
+
+    dependencies {
+        compile: "junit:junit:4.12"
+        compile: "org.projectlombok:lombok:1.6.14"
+        compile: "org.apache.commons:commons-lang3:3.4"
+        compile: "org.slf4j:slf4j-api:1.7.7"
+        compile: "junit:junit:4.12"
+        compile: "junit:junit:4.12"
+    }
+}
+
