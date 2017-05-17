@@ -12,6 +12,7 @@ allprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
 
+    // Define the level configuration.
     sourceSets {
         main {
             resources {
