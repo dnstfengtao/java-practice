@@ -46,9 +46,16 @@ allprojects {
         compile "org.springframework:spring-core:${springVersion}"
         compile "org.springframework:spring-beans:${springVersion}"
         compile "org.springframework:spring-context:${springVersion}"
+        compile "org.springframework:spring-context-support:${springVersion}"
+        compile "org.springframework:spring-webmvc:${springVersion}"
 
         compile "org.apache.httpcomponents:httpclient:${httpclientVersion}"
         compile "org.apache.httpcomponents:httpcore:${httpcoreVersion}"
+
+        // tomcat
+        compile "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
+        compile "org.apache.tomcat.embed:tomcat-embed-el:${tomcatVersion}"
+        compile "org.apache.tomcat.embed:tomcat-embed-websocket:${tomcatVersion}"
     }
 }
 
