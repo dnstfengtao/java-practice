@@ -1,4 +1,4 @@
-package com.finley.config;
+package com.jpract.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

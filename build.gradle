@@ -51,6 +51,9 @@ allprojects {
 
         compile "org.apache.httpcomponents:httpclient:${httpclientVersion}"
         compile "org.apache.httpcomponents:httpcore:${httpcoreVersion}"
+        compile "org.apache.commons:commons-csv:${commonsCSVVersion}"
+        compile "org.apache.commons:commons-lang3:${apacheCommonLangVersion}"
+        compile "org.apache.commons:commons-collections4:${apacheCommonCollectionsVersion}"
 
         // tomcat
         compile "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}"
